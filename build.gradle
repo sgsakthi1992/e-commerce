@@ -12,6 +12,10 @@ repositories {
     mavenCentral()
 }
 
+bootJar {
+    enabled = false
+}
+
 subprojects {
 
     group = 'com.sakthi'
@@ -57,3 +61,4 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
