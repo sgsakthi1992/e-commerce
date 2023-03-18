@@ -1,6 +1,8 @@
 package com.sakthi.account.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import java.util.Objects;
 import lombok.Getter;
@@ -14,15 +16,13 @@ import org.hibernate.Hibernate;
 @Setter
 @ToString
 @RequiredArgsConstructor
-public class Account {
+public class Admin {
 
   @Id
-  private Long accountId;
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long adminId;
   private String firstName;
   private String lastName;
-  private String address;
-  private String zipcode;
-  private String phoneNumber;
 
   @Override
   public boolean equals(Object o) {
@@ -32,8 +32,8 @@ public class Account {
     if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) {
       return false;
     }
-    Account account = (Account) o;
-    return accountId != null && Objects.equals(accountId, account.accountId);
+    Admin admin = (Admin) o;
+    return adminId != null && Objects.equals(adminId, admin.adminId);
   }
 
   @Override

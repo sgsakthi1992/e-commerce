@@ -1,0 +1,7 @@
+spring:
+  h2:
+    console:
+      enabled: true
+  datasource:
+    name: account
+    generate-unique-name: false
